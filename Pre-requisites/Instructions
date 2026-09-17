@@ -1,0 +1,33 @@
+## Prerequisites & Environment Setup
+
+Download and install Docker Desktop on your machine.
+Open Docker Desktop and ensure the Docker engine daemon is running in the background.
+Download and install VS Code (or your preferred code editor).
+Download and install DBeaver Community Edition for database management.
+Ensure Python 3.10+ and pip are installed on your system.
+
+## Setting up local VS environment
+
+Create a root directory for the project.
+Open this root directory in VS Code.
+create a new file named docker-compose.yml
+Paste the infrastructure configuration for PostgreSQL, Apache Kafka, and Redis into the docker-compose.yml file and save it
+Open a persistent terminal in VS Code using Ctrl + ~ (or Terminal > New Terminal).
+Start the infrastructure services in the background by executing: docker compose -f docker/docker-compose.yml up -d
+Verify that all three containers (enterprise_postgres, enterprise_kafka, enterprise_redis) are actively running by executing: docker ps
+
+## Installing Application Dependencies
+
+Install the required Python client libraries for the architecture by running: pip install kafka-python redis faiss-cpu pinecone-client opentelemetry-api opentelemetry-sdk opentelemetry-instrumentation-fastapi
+
+## Connecting to PostgreSQL (DBeaver)
+
+Open DBeaver and create a new PostgreSQL database connection.
+Configure the connection settings to match the Docker container:
+Host: localhost
+Port: 5432
+Database: research_ai_db
+Username: ai_user
+Password: ai_password
+Click Test Connection to confirm successful access to the local database container.
+Click OK to save the connection profile
