@@ -1,5 +1,6 @@
 # Multi-Agent-AI-Research-Review-System
 
+# Tech Stacks Used
 FastAPI: Synchronous API Gateway / Serving
 Kafka: Asynchronous Event Ingestion & Streaming
 PostgreSQL: Persistent DB & Metadata Storage
