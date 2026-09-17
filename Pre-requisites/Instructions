@@ -31,3 +31,10 @@ Username: ai_user
 Password: ai_password
 Click Test Connection to confirm successful access to the local database container.
 Click OK to save the connection profile
+
+Why Fast API ?
+We use FastAPI as the main brain (API Gateway) of our system for three simple reasons:
+It’s extremely fast: AI tasks (like querying databases or calling vector models) take time. FastAPI handles multiple requests simultaneously without freezing or slowing down.
+It prevents errors automatically: It checks incoming data (like user prompts or document uploads) instantly and catches mistakes before they break your system.
+It writes its own documentation: It automatically creates an interactive web page (/docs) where you can see and test all your API endpoints without extra code.
+In short, it receives requests from users, coordinates with PostgreSQL, Kafka, and Redis in the background, and sends the answer back to the user quickly and safely.
